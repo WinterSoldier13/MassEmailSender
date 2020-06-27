@@ -1,4 +1,8 @@
 import pandas as pd
+from smtplib import SMTP
+from tqdm import tqdm
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 
 dataframe = pd.read_csv('/home/wintersoldier/Downloads/emails.csv')
@@ -15,10 +19,7 @@ for email in dataframe['Email Address']:
     count-=-1
 
 
-from smtplib import SMTP
-from tqdm import tqdm
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
+
 
 print('High-Orbit-Email bombarder (MODIFIED) ~by WinterSoldier')
 print('Please make sure that you have allowed less secure app access in your Google Account Settings')
