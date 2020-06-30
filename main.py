@@ -56,7 +56,10 @@ try:
         html = """
         <html>
           <head></head>
-          <body></body>
+          <body>
+            <h1>Hello World</h1>
+            <p>How you doin'</p>
+          </body>
         </html>
         """
 
