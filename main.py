@@ -5,8 +5,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
+
+
 dataframe = pd.read_csv('/home/wintersoldier/Downloads/emails.csv')
-dataframe.head()
+print(dataframe.head())
 
 names=[]
 emails=[]
@@ -21,7 +23,7 @@ for email in dataframe['Email Address']:
 
 
 
-print('High-Orbit-Email bombarder (MODIFIED) ~by WinterSoldier')
+print('High-Orbit-Email Canon ~by WinterSoldier')
 print('Please make sure that you have allowed less secure app access in your Google Account Settings')
 
 print('\n\n')
@@ -39,14 +41,7 @@ try:
     mail.ehlo()
     mail.starttls()
     mail.login(email,password)
-    for i in tqdm(range(n)):
-    
-    
-#         print('Sending to :',names[i])
-#         TEXT = 'Hi, '+names[i]
-#         SUBJECT = "Hey, "+names[i]+" you've been invited."
-
-      
+    for i in tqdm(range(n)):      
         msg = MIMEMultipart('alternative')
         msg['Subject'] = "Hello, "+names[i]
         msg['From'] = 'Someone Anonymous'
@@ -74,15 +69,6 @@ try:
         recv = emails[i]
         
         mail.sendmail(email, recv, msg.as_string())
-        
-        
-    
-        
-        
-#         message = 'Subject: {}\n\n{}'.format(SUBJECT, TEXT)
-        
-#         recv = emails[i]
-#         mail.sendmail(email,recv,message)
         
     mail.quit()
 except:
